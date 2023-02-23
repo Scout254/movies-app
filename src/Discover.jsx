@@ -55,10 +55,10 @@ const Discover = () => {
     }, []);
   return (
 
-    <Tabs selectedIndex={activeTab} onSelect={handleTabClick} className="mx-[20px]">
+    <Tabs selectedIndex={activeTab} onSelect={handleTabClick} className="mx-[20px] my-[100px]">
     <TabList className=" flex gap-[20px] my-[20px]">
-        <Tab className="outline-none cursor-pointer" selectedClassName="border-b-4 border-red-500"><h2>Discover Movies</h2></Tab>
-        <Tab className="outline-none cursor-pointer" selectedClassName="border-b-4 border-red-500"><h2>Discover TV</h2></Tab>
+        <Tab className="outline-none cursor-pointer" selectedClassName="border-b-4 border-red-500"><h2 className="text-2xl">Discover Movies</h2></Tab>
+        <Tab className="outline-none cursor-pointer" selectedClassName="border-b-4 border-red-500"><h2 className="text-2xl">Discover TV</h2></Tab>
     </TabList>
 <TabPanel>
 <Swiper
@@ -68,8 +68,8 @@ const Discover = () => {
     <div className="">
      {discoverMovie?.map(({id,title,backdrop_path,original_title,overview,poster_path,release_date,vote_average})=>(
        <SwiperSlide key={id}>
-        <div  className="h-[400px] border  w-[300px] bg-gray-900 text-white cursor-pointer " >
-        <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="" className="h-[200px] w-full"/>
+        <div  className="h-[400px] border  w-[300px]  text-white cursor-pointer transition ease-in-out delay-150 bg-stone-900 hover:-translate-y-1 hover:scale-110 hover:bg-stone-400 duration-300" >
+        <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} alt="" className="h-[200px] w-full"/>
        
          {/* <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" className="h-[250px] w-[250px]" /> */}
      <div className="pt-[20px]">
@@ -93,8 +93,8 @@ const Discover = () => {
             
         {discoverTv?.map(({id,name,backdrop_path,original_name,overview,poster_path,release_date,vote_average})=>(
             <SwiperSlide key={id} >
-            <div  className="h-[400px] border  w-[300px] bg-gray-900 text-white cursor-pointer ">
-             <img src={`https://image.tmdb.org/t/p/w500${backdrop_path}`} alt="" className="h-[200px] w-full" />
+            <div  className="h-[400px] border  w-[300px] bg-gray-900 text-white cursor-pointer transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-stone-400 duration-300">
+             <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} alt="" className="h-[200px] w-full" />
              {/* <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt="" /> */}
              <div className="pt-[20px]">
                 <h2 className="text-sm text-white">{name}</h2>

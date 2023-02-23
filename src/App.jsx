@@ -13,7 +13,7 @@ const App = () => {
       {/* <Navbar/> */}
       {/* <Popular/> */}
       <Trending/>  
-      {/* <Discover/> */}
+      <Discover/>
     </div>
   )
 }
